@@ -74,9 +74,9 @@ nav {
     }
 }
 
-/* General Footer Styles */
-footer {
-    background-color: #282c34; /* Dark background for the header */
+  /* General Footer Styles */
+  footer {
+    background-color: #282c34;
     color: #fff;
     padding: 40px 20px;
 }
@@ -86,6 +86,7 @@ footer {
     margin: 0 auto;
 }
 
+/* Footer Links and Columns */
 .footer-links {
     display: flex;
     justify-content: space-between;
@@ -116,21 +117,24 @@ footer {
 /* Social Media Grid List */
 .social-list {
     display: flex;
-    gap: 15px; /* Adds space between icons */
+    gap: 15px;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .social-list a {
-    display: inline-block;
-    padding: 10px;
+    display: inline-flex;
     background-color: #333;
     border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
 }
 
 .social-list img {
-    width: 30px;
-    height: 30px;
-    display: block;
+    width: 24px;
+    height: 24px;
 }
 
 /* Footer Bottom */
@@ -152,12 +156,17 @@ footer {
     }
 
     .footer-column {
+        margin-right: 0;
         margin-bottom: 20px;
         min-width: 100%;
     }
 
+    .footer-bottom {
+        text-align: center;
+    }
+
     .social-list {
-        justify-content: flex-start;
+        justify-content: center;
         gap: 10px;
     }
 }
