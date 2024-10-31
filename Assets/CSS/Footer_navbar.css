@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light background color */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center align items vertically */
+    padding: 20px;
+    background-color: #282c34; /* Dark background for the header */
+    color: white;
+}
+
+.logo a {
+    font-size: 24px; /* Logo font size */
+    margin: 0; /* Remove margin */
+    text-decoration: none;
+    color: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none; /* Hide by default for larger screens */
+    font-size: 30px; /* Hamburger icon size */
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0; /* Remove margin */
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show the hamburger icon on small screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide the navigation links by default */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width for mobile menu */
+        position: absolute; /* Position the menu absolutely */
+        top: 60px; /* Position below the header */
+        left: 0;
+        background-color: #282c34; /* Background for the mobile menu */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Margin for stacked links */
+        text-align: center; /* Center align links */
+    }
+}
+
+/* General Footer Styles */
+footer {
+    background-color: #282c34; /* Dark background for the header */
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #444;
+}
+
+.footer-column {
+    flex: 1;
+    margin-right: 20px;
+    min-width: 180px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Social Media Grid List */
+.social-list {
+    display: flex;
+    gap: 15px; /* Adds space between icons */
+    flex-wrap: wrap;
+}
+
+.social-list a {
+    display: inline-block;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 50%;
+}
+
+.social-list img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+        min-width: 100%;
+    }
+
+    .social-list {
+        justify-content: flex-start;
+        gap: 10px;
+    }
+}

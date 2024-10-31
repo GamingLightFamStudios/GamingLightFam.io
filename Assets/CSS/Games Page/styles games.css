@@ -1,0 +1,116 @@
+.hero-banner {
+    background: linear-gradient(135deg, #472bfa 0%, #4da1ff 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-banner h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.platform-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.platform {
+    background-color: #252d6b;
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.platform img {
+    width: 150px; /* Increased image size */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Space between image and text */
+}
+
+.platform span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.game-section {
+    padding: 50px 20px; /* Padding around the section */
+    text-align: center; /* Center-align the section text */
+}
+
+h2 {
+    font-size: 2em; /* Size for the section title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.games-container {
+    max-width: 1200px; /* Limit the container width */
+    margin: 0 auto; /* Center the container */
+}
+
+.game-grid {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between grid items */
+}
+
+.game-card {
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    overflow: hidden; /* Clip the contents to maintain rounded corners */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    padding: 15px; /* Padding inside the card */
+}
+
+.game-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.thumbnail {
+    width: 100%; /* Responsive thumbnail width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+h3 {
+    font-size: 1.2em; /* Font size for game titles */
+    margin: 10px 0; /* Space above and below the title */
+}
+
+.play-button {
+    display: inline-block; /* Inline block for the button */
+    background-color: #ff5733; /* Button color */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Padding inside the button */
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: auto; /* Space above the button */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.play-button:hover {
+    background-color: #e84e29; /* Darker shade on hover */
+}

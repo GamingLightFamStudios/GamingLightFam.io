@@ -1,0 +1,42 @@
+.hero {
+    background-image: url('hero-image.jpg'); /* Replace with your hero image */
+    background-size: cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.cta-button {
+    background-color: #ff5733; /* Call-to-action button color */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.game-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.game-card {
+    display: inline-block;
+    background-color: #fff; /* White background for game cards */
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px; /* Width for game cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow effect */
+}
+
+.game-card img {
+    width: 100%; /* Responsive image */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .game-card {
+        width: 90%; /* Full width for game cards on mobile */
+    }
+}

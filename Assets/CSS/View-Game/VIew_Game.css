@@ -1,0 +1,42 @@
+.game-view {
+    padding: 20px;
+    text-align: center;
+}
+
+.game-details {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+    max-width: 1200px; /* Max width for larger screens */
+    margin: 0 auto; /* Center the section */
+}
+
+.game-thumbnail {
+    width: 50%; /* Set the image width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 400px; /* Max width for the image */
+    margin-right: 10px; /* Reduced margin to pull closer */
+}
+
+.game-info {
+    width: 50%; /* Set the width for the game info */
+    text-align: left; /* Align text to the left */
+    padding-left: 5px; /* Reduced padding on the left */
+    margin-top: 10px; /* Add margin to the top of game-info */
+}
+
+.platform {
+    display: inline-block;
+    margin: 5px 0; /* Vertical margin for spacing */
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+}
+
+.play-button {
+    background-color: #ff5733;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px; /* Keep the margin on top */
+    display: inline-block; /* Ensure it's treated as a block for margin */
+}

@@ -1,0 +1,78 @@
+/* Contact Us Section Styling */
+.contact-section {
+    padding: 2rem;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fffdfd;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 1.5rem;
+    }
+
+    .contact-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        font-size: 0.9rem;
+    }
+
+    .submit-button {
+        font-size: 0.9rem;
+    }
+}

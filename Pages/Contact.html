@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us  ──── GamingLightFam</title>
+    <link rel="stylesheet" href="../Assets/CSS/Footer_navbar.css"> <!-- Ensure this is the correct path -->
+    <link rel="stylesheet" href="../Assets/CSS/Contact.css"> <!-- Ensure this is the correct path -->
+    <link rel="stylesheet" href="../Assets/CSS/Color.css"> <!--Main css-->
+    <link rel="icon" href="https://static.wixstatic.com/media/33d207_488969dfc01e4d31b1a605290f0a1141~mv2.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="../index.html">GamingLightFam </a></div>
+        <nav>
+            <div class="menu-toggle" id="mobile-menu">
+                &#9776; <!-- Hamburger icon -->
+            </div>
+            <ul class="nav-links">
+                <li><a href="../Games.html">Our Games</a></li>
+                <li><a href="../About Us.html">About Us</a></li>
+                <li><a href="../Blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Contact Us Section -->
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            
+            <form id="contactForm" class="contact-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+            
+            <p id="successMessage" style="display:none; color: green;">Message sent successfully!</p>
+            <p id="errorMessage" style="display:none; color: red;">Failed to send message. Please try again later.</p>
+        </section>
+    
+        <!-- Include the EmailJS library -->
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script>
+            (function(){
+                emailjs.init("iJLHCkBxZu5OWLikw"); // Replace "YOUR_USER_ID" with your EmailJS user ID
+            })();
+    
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+    
+                emailjs.sendForm('service_sue95yk', 'template_en918tg', this)
+                    .then(function() {
+                        document.getElementById('successMessage').style.display = 'block';
+                    }, function(error) {
+                        document.getElementById('errorMessage').style.display = 'block';
+                    });
+            });
+        </script>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <!-- Footer Links Section -->
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="About Us.html">About Us</a>
+                    <a href="Pages/Contact.html">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Games</h3>
+                    <a href="Games.html">Our Games</a>
+                    <a href="Blog.html">Blog & News</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <a href="Pages/FAQ.html">FAQ</a>
+                    <a href="Pages/Terms of Use.html">Terms of Use</a>
+                    <a href="Pages/Privacy Policy.html">Privacy Policy</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-list">
+                        <a href="https://www.youtube.com/@GamingLightFam" target="_blank"><img src="https://static.wixstatic.com/media/33d207_3d95ab2c3bbd469e8a0af9490ea16d9b~mv2.png" alt="YouTube"></a>
+                        <a href="https://www.facebook.com/GamingLightFam" target="_blank"><img src="https://static.wixstatic.com/media/33d207_3d2f0de2a6cd458d8fe4fa03ee3695cb~mv2.png" alt="Facebook"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Social Media and Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 GamingLightFam Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../Assets/JS/Toggle.js"></script>
+</body>
+</html>
