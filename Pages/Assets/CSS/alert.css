@@ -1,0 +1,21 @@
+/* General Alert Styling */
+.site-alert {
+    width: 100%;
+    background-color: #f39c12; /* Bright orange color */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Ensures padding fits within the width */
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 600px) {
+    .site-alert {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+        padding: 0.8rem;   /* Slightly smaller padding */
+    }
+}

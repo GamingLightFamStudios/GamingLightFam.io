@@ -1,0 +1,68 @@
+/* FAQ Section Styling */
+.faq-section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+/* FAQ Item */
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    background-color:  #282c34;
+    color: white;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.faq-question:hover {
+    background-color:  #282c34;
+}
+
+.faq-answer {
+    padding: 1rem;
+    background-color:  #282c34;
+    color: #666;
+    display: none; /* Hidden by default */
+}
+
+.faq-item.active .faq-answer {
+    display: block; /* Show answer when item is active */
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    .faq-section {
+        padding: 1rem; /* Reduced padding on smaller screens */
+    }
+
+    .faq-section h2 {
+        font-size: 1.5rem; /* Smaller heading on mobile */
+    }
+
+    .faq-question {
+        font-size: 1rem; /* Smaller question text */
+        padding: 0.75rem; /* Reduced padding */
+    }
+
+    .faq-answer {
+        padding: 0.75rem; /* Reduced padding for answers */
+    }
+}
