@@ -1,45 +1,57 @@
-const CACHE_NAME = 'offline-cache-v1';
-const OFFLINE_URL = '../Offline.html'; // Path to your offline page
+// Define cache name and files to cache
+const CACHE_NAME = 'my-site-cache-v1';
 const FILES_TO_CACHE = [
-    '/',
-    '../../..index.html',
-    '../../../Offline.html',
-    '../../../Games.html',
-    "../../../About Us.html",
-    "../../../Blog.html" // Add the path to all pages you want available offline
+  '/',
+  '../../../index.html',
+  '../../../Games.html', // Add other pages to cache
+  '../../../Blog.html',
+  '../../../About Us.html',
+  '../../../Pages/Contact.html',
+  '../../../Pages/FAQ.html',
+  '../../../Pages/Privacy Policy.html',
+  '../../../Pages/Terms of Use.html',
+  '../../../Games/Roblox/View Games/Murder Mystery X.html',
+  '../../../Games/Roblox/View Games/PrisonBreak Life'
 ];
 
-// Install the service worker
-self.addEventListener('install', (event) => {
-    event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(FILES_TO_CACHE);
-        })
-    );
+// Install event - caching necessary files
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => {
+        console.log('Opened cache');
+        return cache.addAll(FILES_TO_CACHE);
+      })
+  );
 });
 
-// Activate the service worker
-self.addEventListener('activate', (event) => {
-    event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames.map((cache) => {
-                    if (cache !== CACHE_NAME) {
-                        return caches.delete(cache);
-                    }
-                })
-            );
+// Activate event - clean up old caches
+self.addEventListener('activate', event => {
+  const cacheWhitelist = [CACHE_NAME];
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          if (!cacheWhitelist.includes(cacheName)) {
+            return caches.delete(cacheName);
+          }
         })
-    );
+      );
+    })
+  );
 });
 
-// Fetch requests and serve cached content if offline
-self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        fetch(event.request).catch(() => {
-            return caches.match(event.request).then((response) => {
-                return response || caches.match(OFFLINE_URL);
-            });
-        })
-    );
+// Fetch event - serve cached content or fetch from network
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => {
+        // Return cached content or fetch from the network
+        return response || fetch(event.request);
+      })
+      .catch(() => {
+        // If the fetch fails (offline), show the cached index.html
+        return caches.match('/index.html');
+      })
+  );
 });
