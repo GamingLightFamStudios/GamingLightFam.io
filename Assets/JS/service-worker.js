@@ -2,9 +2,11 @@ const CACHE_NAME = 'offline-cache-v1';
 const OFFLINE_URL = '../Offline.html'; // Path to your offline page
 const FILES_TO_CACHE = [
     '/',
-    '../../../index.html',
+    '../../..index.html',
     '../../../Offline.html',
-    '../../../Games.html' // Add the path to all pages you want available offline
+    '../../../Games.html',
+    "../../../About Us.html",
+    "../../../Blog.html" // Add the path to all pages you want available offline
 ];
 
 // Install the service worker
