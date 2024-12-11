@@ -1,0 +1,1001 @@
+:root {
+    --black-color: #222222
+}
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    padding-top: 50px; /* To avoid content being hidden under the fixed navbar */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--black-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar .logo img {
+    width: 80px;
+    height: auto;
+    background-image: u;
+}
+
+.navbar-logo {
+    background-image: url('');
+    background-size: contain; /* Adjusts the size to fit */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center; /* Centers the image */
+    width: 100px; /* Adjust width */
+    height: 90px; /* Adjust height */
+}
+
+.navbar-logo a {
+    cursor: pointer;
+}
+
+/* Hamburger Menu (Mobile) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 10px;  /* Increased gap between lines */
+    cursor: pointer;
+    padding: 10px;  /* Increased padding for better click area */
+    transition: transform 0.3s ease; /* Smooth animation */
+}
+
+.menu-toggle div {
+    width: 40px;  /* Increased width of hamburger lines */
+    height: 5px;  /* Increased thickness of hamburger lines */
+    background-color: #fff;
+    border-radius: 5px;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Animation for bars */
+}
+
+.menu-toggle.active div:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);  /* Top bar rotates to form X */
+}
+
+.menu-toggle.active div:nth-child(2) {
+    opacity: 0;  /* Hide the middle bar */
+}
+
+.menu-toggle.active div:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);  /* Bottom bar rotates to form X */
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links li {
+    list-style: none;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+    background-color: #444;
+}
+
+/* Mobile Styles | navbar | Show hamburger menu on mobile */
+@media screen and (max-width: 768px) {
+   .menu-toggle {
+    display: flex;
+}
+
+/* Nav links container for mobile */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 25px 0;
+    gap: 20px;  /* Increased gap between links */
+    transform: translateX(100%);  /* Initially off-screen to the right */
+    opacity: 0;  /* Initially hidden */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Animation for opening and closing */
+}
+
+/* Show nav-links when the menu-toggle is active */
+.nav-links.active {
+    transform: translateX(0);  /* Move the menu into view */
+    opacity: 1;  /* Make it visible */
+}
+
+.nav-links li a {
+    font-size: 1.2rem;  /* Increased font size for mobile */
+    padding: 10px;  /* Added padding for better clickability */
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links li a:hover {
+    background-color: #555; /* Add hover effect */
+ }
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--black-color);
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer Links and Columns */
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #444;
+}
+
+.footer-column {
+    flex: 1;
+    margin-right: 20px;
+    min-width: 180px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Social Media Grid List */
+.social-list {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.social-list a {
+    display: inline-flex;
+    background-color: #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-list img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Mobile Styles | Footer */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-column {
+        margin-right: 0;
+        margin-bottom: 20px;
+        min-width: 100%;
+    }
+
+    .footer-bottom {
+        text-align: center;
+    }
+
+    .social-list {
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+/* Home page | Hero Section | Featured Games | FAQ (Frequently Asked Questions) */
+.hero {
+    background-image: url('../Assets Image/hero-banner.png'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    padding: 200px 20px;
+    text-align: center;
+    color: #fff;
+    background-color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 40px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: white;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+}
+
+.hero .cta-btn {
+    background-color: #5A4FCF;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    color: white;
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .hero {
+        padding: 150px 20px; /* Adjust padding for smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 2.2rem; /* Adjust font size for mobile */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Adjust font size for paragraph */
+        padding: 0 20px; /* Add padding to prevent text from touching the edges */
+    }
+
+    .hero .cta-btn {
+        font-size: 1.1rem; /* Adjust button font size */
+        padding: 10px 18px; /* Adjust padding for button */
+    }
+}
+
+ /* Section container */
+ .section-container {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+/* Heading styling */
+.section-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #0078d7; /* A nice blue color */
+}
+
+/* Facebook Plugin container */
+.fb-page {
+    margin: 0 auto;
+}
+
+.games {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+}
+
+.games h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.game-item {
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-item a {
+    text-decoration: none;
+}
+
+/* Hover effects */
+.game-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.game-item h3 {
+    padding: 10px;
+    font-size: 1.2rem;
+    color: black;
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .game-item {
+        width: 150px; /* Reduce width for smaller screens */
+    }
+
+    .games h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* View games | Game view layout*/
+
+/* Game Header */
+.game-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff; /* White background */
+    border-radius: 8px;
+    box-shadow: none; /* Remove the shadow for a cleaner look */
+    margin-top: 40px; /* Adjust this value to control the distance from the top */
+}
+
+/* Game Image */
+.game-image {
+    max-width: 40%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Game Information */
+.game-info {
+    flex: 1;
+}
+
+/* Title and Description */
+.game-info h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.game-info p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Features List */
+.game-info ul {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.game-info li {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Play Buttons */
+.play-btn {
+    display: inline-block;
+    padding: 8px 16px; /* Smaller padding for a more "normal" button size */
+    font-size: 1rem; /* Normal font size */
+    background-color: #0078ff; /* Blue background */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+/* Latest News Section */
+.latest-news {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.latest-news h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Wrapper for the posts container */
+#posts-container-wrapper {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center;     /* Vertically center (optional, depending on the height) */
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+/* Container for the posts */
+#posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center posts inside the container */
+    width: 100%;
+    max-width: 1200px; /* Optional: limit the max width of the container */
+}
+
+/* Individual post styling */
+.post {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background: #fff;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.post h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 0 10px;
+    color: #333;
+}
+
+/* Styling for the "Read More" button */
+.read-more {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007BFF;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+    #posts-container {
+        grid-template-columns: 1fr; /* Stack posts in a single column on small screens */
+    }
+
+    .post {
+        width: 100%; /* Ensure posts take full width on smaller screens */
+    }
+
+    .read-more {
+        font-size: 14px; /* Adjust font size for small screens */
+    }
+}
+
+
+/* Media Section | screenshot */
+/* Media Section */
+.media {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.media h2 {
+    font-size: 2.2rem;  /* Increased the font size for the heading */
+    margin-bottom: 20px;
+    color: black;
+}
+
+.media-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;  /* Increased gap between images */
+    flex-wrap: wrap;
+}
+
+.media-gallery img {
+    width: 250px;  /* Increased width of the images */
+    height: auto;  /* Maintain aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;  /* Optional: Add hover effect */
+}
+
+.media-gallery img:hover {
+    transform: scale(1.05);  /* Optional: Slightly zoom image on hover */
+}
+
+/* Mobile support */
+@media (max-width: 768px) {
+    .media h2 {
+        font-size: 2rem; /* Slightly reduce heading size for tablets */
+    }
+
+    .media-gallery {
+        gap: 10px;  /* Reduce gap for smaller screens */
+    }
+
+    .media-gallery img {
+        width: 200px;  /* Reduce image width for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .media h2 {
+        font-size: 1.8rem;  /* Further reduce heading size for small screens */
+    }
+
+    .media-gallery img {
+        width: 150px;  /* Reduce image width for smaller devices */
+    }
+}
+
+.specifications {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: white;  /* Full white background */
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;     /* Center content vertically */
+    box-sizing: border-box;
+}
+
+.specifications-container {
+    max-width: 900px;
+    width: 100%;  /* Ensures the container takes full width up to the max width */
+    padding: 40px 50px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #e0e0e0;
+}
+
+.specifications-container:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+}
+
+.specifications h2 {
+    font-size: 2.8rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.specifications ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #34495e;
+}
+
+.specifications li {
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.specifications li:hover {
+    background-color: #eaeaea;
+    padding-left: 15px;
+}
+
+.specifications li div {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.specifications li strong {
+    font-weight: 600;
+    color: #0078ff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .specifications-container {
+        padding: 25px 20px;
+    }
+
+    .specifications h2 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+
+    .specifications ul {
+        font-size: 1rem;
+    }
+
+    .specifications li {
+        margin-bottom: 15px;
+    }
+
+    .specifications li div {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .game-image {
+        max-width: 100%;
+    }
+
+    .game-info h1 {
+        font-size: 1.5rem;
+    }
+
+    .game-info p {
+        font-size: 1rem;
+    }
+}
+
+/* FAQ Page | FAQ (Frequently Asked Questions) */
+
+.faq {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.faq h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.faq-question {
+    background-color: #0078ff;
+    color: white;
+    padding: 15px;
+    font-size: 1.2rem;
+    text-align: left;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #005bb5;
+}
+
+.faq-answer {
+    display: none; /* Hidden by default */
+    padding: 15px;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: left;
+    max-height: 0; /* Set initial max height to 0 for animation */
+    overflow: hidden; /* Hide overflowing content */
+    transition: max-height 0.3s ease-out; /* Animate the max-height */
+}
+
+.faq-answer p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.faq-answer a {
+    text-decoration: none;
+    color: black;
+}
+
+.faq-item ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.faq-item ul li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+/* Image styling */
+.faq-image {
+    width: 550px; /* You can adjust the size of the image */
+    height: auto; /* Keep the aspect ratio of the image */
+}
+
+ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+li {
+    list-style-type: disc;
+    margin-bottom: 10px;
+}
+
+/* Clear the float (though float is not used now) */
+.faq-answer::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media (max-width: 768px) {
+    .faq h2 {
+        font-size: 1.5rem;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+    }
+
+    .faq-answer p {
+        font-size: 0.9rem;
+    }
+
+    .faq-image {
+        max-width: 80%; /* Adjust image size for smaller screens */
+    }
+}
+
+/* About us page | Hero Section */
+.about-hero {
+    background: url('https://static.wixstatic.com/media/33d207_f2ce4546d6e843bf977e5a3b7e925121~mv2.png') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.about-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+}
+
+/* Main Content */
+.about-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.about-content p {
+    font-size: 30px;
+}
+
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Terms of Use & Privacy Policy page */
+
+.terms-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styling */
+.terms-header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.terms-header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+/* Main Content Styling */
+main {
+    padding: 40px 0;
+    background-color: white;
+}
+
+.terms-content h2 {
+    color: #333;
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+.terms-content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.terms-content a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.terms-content a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+    .terms-header h1 {
+        font-size: 28px;
+    }
+
+    .terms-content h2 {
+        font-size: 20px;
+    }
+
+    .terms-content p {
+        font-size: 14px;
+    }
+}
+
+/* Contact Us page */
+.contact-section {
+    padding: 2rem;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--black-color);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    color: var(--black-color);
+}
+
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 1.5rem;
+    }
+
+    .contact-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        font-size: 0.9rem;
+    }
+
+    .submit-button {
+        font-size: 0.9rem;
+    }
+}
+
